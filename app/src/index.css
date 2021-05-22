@@ -1,0 +1,91 @@
+@import "antd/dist/antd.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.kpy-10 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.kpx-14 {
+  padding-left: 14px;
+  padding-right: 14px;
+}
+
+.font-16 {
+  font-size: 16px;
+}
+.font-14 {
+  font-size: 14px;
+}
+.font-12 {
+  font-size: 12px;
+}
+
+.klp-border1 {
+  border-color: #c9caca;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  color: inherit;
+}
+
+.main-class {
+  width: calc(100% - 300px);
+}
+.aside-class {
+  width: 300px;
+}
+
+@media all and (min-width: 992px) {
+  .main-class {
+    width: calc(100% - 400px);
+  }
+  .aside-class {
+    width: 400px;
+  }
+}
+
+@media all and (min-width: 1400px) {
+  .main-class {
+    width: calc(100% - 600px);
+  }
+  .aside-class {
+    width: 600px;
+  }
+}
+
+.shoppingMallsDropdown {
+  top: 62px !important;
+}
+.tenantCPDropdown {
+  top: 62px !important;
+}
+.versionsDropdown {
+  top: 62px !important;
+}
+.fieldDropdown {
+  top: 45px !important;
+}
+
+button:focus,
+textarea {
+  outline: none !important;
+}
+
+.primary-button:active {
+  box-shadow: inset 0px 0px 3px black;
+}

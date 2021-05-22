@@ -1,0 +1,48 @@
+image: node:12
+
+pipelines:
+  default:
+    - parallel:
+        - step:
+            name: Build app
+            script:
+              - npm ci --prefix ./app
+              - npm run build --prefix ./app
+              - ls app
+              - ls app/dist
+            artifacts:
+              - app/**
+        - step:
+            name: Build functions
+            script:
+              - npm ci --prefix ./functions
+              - npm ci --prefix ./functions
+            artifacts:
+              - functions/**
+
+    - step:
+        name: Deploy to Dev
+        deployment: development
+        script:
+          - pipe: atlassian/firebase-deploy:1.1.0
+            variables:
+              FIREBASE_TOKEN: $FIREBASE_TOKEN
+              PROJECT_ID: $PROJECT_ID
+    - step:
+        name: Deploy to Staging
+        deployment: staging
+        trigger: manual
+        script:
+          - pipe: atlassian/firebase-deploy:1.1.0
+            variables:
+              FIREBASE_TOKEN: $FIREBASE_TOKEN
+              PROJECT_ID: $PROJECT_ID
+    - step:
+        name: Deploy to Production
+        deployment: production
+        trigger: manual
+        script:
+          - pipe: atlassian/firebase-deploy:1.1.0
+            variables:
+              FIREBASE_TOKEN: $FIREBASE_TOKEN
+              PROJECT_ID: $PROJECT_ID

@@ -1,0 +1,11 @@
+.contract-menu {
+  fill: #c9caca;
+}
+
+.contract-menu:hover {
+  fill: #3d3d3d;
+}
+
+.contract-menu-active {
+  fill: #3d3d3d;
+}

@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "prod": "klp-contracts",
+    "dev": "klp-project-dev",
+    "staging": "klp-staging-cdd41",
+    "default": "klp-project-dev"
+  }
+}
